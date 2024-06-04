@@ -59,6 +59,7 @@ M.setup = function(opts)
   vim.cmd('highlight Number guifg=' .. colors.number)
   vim.cmd('highlight Type guifg=' .. colors.type)
   vim.cmd('highlight Identifier guifg=' .. colors.identifier)
+  vim.cmd('highlight SignColumn guibg=' .. colors.background)
 
   treesitter_setup()
 end
