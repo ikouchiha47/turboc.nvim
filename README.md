@@ -34,9 +34,8 @@ Learn a bit more about theming, and try to modernise this.
 
 ### How it looks:
 
-![normal](./images/turbco.png)
+![normal](./images/turbco_green.png)
+![normal](./images/turbco_green_js.png)
 
-![js](./images/turboc_js.png)
-
-![go](./images/turboc_go.png)
+[!pink](./images/turbco.png)
 

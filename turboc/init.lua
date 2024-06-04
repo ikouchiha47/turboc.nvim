@@ -1,7 +1,7 @@
 local M = {}
 
-local base_colors = {
-  background = '#06069e', -- Blue
+local turbo_pink = {
+  background = '#000080', -- Blue
   foreground = '#FFFFFF', -- White
   comment = '#55FF55', -- Light Green
   keyword = '#FF5555', -- Light Red
@@ -9,17 +9,26 @@ local base_colors = {
   number = '#55FFFF', -- Light Cyan
   type = '#AAAAFF', -- Light Blue
   identifier = '#f461f4', -- Light Magenta
+  cursorline = '#000050', -- Dark stuff
 }
 
-local dracula_colors = {
-  background = '#0000AA', -- Blue
-  foreground = '#f8f8f2', -- Light Foreground
-  comment = '#6272a4', -- Comment Blue
-  keyword = '#ff79c6', -- Pink
-  string = '#f1fa8c', -- Yellow
-  number = '#bd93f9', -- Purple
-  type = '#8be9fd', -- Cyan
-  identifier = '#50fa7b', -- Green
+local miscl = {
+  keyword = '#FFA500', -- Orange
+  string = '#FFFF9C', -- Yellow
+  comment = '#9EFF8E', -- Light green
+  cursorline = '#333333', -- Dark gray
+}
+
+local turbo_green = {
+  background = '#000080', -- Blue
+  foreground = '#FFFFFF', -- White
+  comment = '#008680',
+  keyword = '#FFFFFF', -- Orange
+  string = '#FFA500',
+  number = '#f461f4', -- Light gray
+  type = '#00FF00', -- Green
+  identifier = '#50FA7B', -- White
+  cursorline = '#000050', -- Dark stuff
 }
 
 local function treesitter_setup()
@@ -36,11 +45,21 @@ local function treesitter_setup()
       },
     },
   }
+
+  -- vim.api.nvim_create_autocmd({ 'BufEnter' }, {
+  --   pattern = '*',
+  --   callback = function()
+  --     print 'calling here'
+  --     if vim.api.nvim_buf_get_option(0, 'filetype') == 'markdown' then
+  --       vim.opt_local.winhighlight = 'Normal:MarkdownBackground'
+  --     end
+  --   end,
+  -- })
 end
 
 M.modes = {
-  base = base_colors,
-  dracula = dracula_colors,
+  base = turbo_green,
+  rose = turbo_pink,
 }
 
 M.setup = function(opts)
@@ -60,6 +79,11 @@ M.setup = function(opts)
   vim.cmd('highlight Type guifg=' .. colors.type)
   vim.cmd('highlight Identifier guifg=' .. colors.identifier)
   vim.cmd('highlight SignColumn guibg=' .. colors.background)
+  vim.cmd('highlight CursorLine guibg=' .. colors.cursorline .. 'guifg=fg')
+
+  vim.api.nvim_set_hl(0, 'Pmenu', { bg = '#008080', fg = '#000000' })
+  vim.api.nvim_set_hl(0, 'NormalFloat', { bg = '#008080', fg = '#000000' })
+  vim.api.nvim_set_hl(0, 'CmpNormal', { bg = '#FF0000' })
 
   treesitter_setup()
 end
