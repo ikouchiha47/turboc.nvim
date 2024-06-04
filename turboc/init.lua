@@ -1,7 +1,7 @@
 local M = {}
 
 local base_colors = {
-  background = '#0000AA', -- Blue
+  background = '#06069e', -- Blue
   foreground = '#FFFFFF', -- White
   comment = '#55FF55', -- Light Green
   keyword = '#FF5555', -- Light Red
@@ -12,7 +12,7 @@ local base_colors = {
 }
 
 local dracula_colors = {
-  background = '#282a36', -- Dark Background
+  background = '#0000AA', -- Blue
   foreground = '#f8f8f2', -- Light Foreground
   comment = '#6272a4', -- Comment Blue
   keyword = '#ff79c6', -- Pink
