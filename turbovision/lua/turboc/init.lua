@@ -61,16 +61,8 @@ M.modes = {
 }
 
 M.setup = function()
-	-- local config_path = vim.fn.stdpath 'config'
-	-- local colors_path = config_path .. '/colors/turbovision/lua/turboc/init.lua'
-	--
-	-- -- Add the path to package.path
-	-- if not string.find(package.path, colors_path) then
-	--   package.path = package.path .. ';' .. colors_path
-	-- end
-
 	-- Register the command with Neovim
-	vim.api.nvim_create_user_command("TurboC", function(args)
+	vim.api.nvim_create_user_command("TurboV", function(args)
 		M.loadcolors({ ["mode"] = args["args"] })
 	end, {
 		nargs = 1,
@@ -111,3 +103,4 @@ M.loadcolors = function(opts)
 end
 
 return M
+

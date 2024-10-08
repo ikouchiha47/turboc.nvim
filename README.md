@@ -22,15 +22,7 @@ With [lazy.nvim](https://github.com/folke/lazy.nvim), the configuration looks:
 ```lua
 return {
   name = 'turboc',
-  dir = vim.fn.stdpath 'config' .. '/colors',
-  config = function()
-    local ok, _ = pcall(require, 'colors.turboc.init')
-
-    if not ok then
-      print 'Failed to load turboc: '
-      return
-    end
-  end,
+  dir = vim.fn.stdpath 'config' .. '/colors/turbovision',
 }
 ```
 
