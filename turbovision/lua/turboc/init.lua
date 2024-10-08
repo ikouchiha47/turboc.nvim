@@ -29,7 +29,7 @@ local turbo_green = {
 	type = "#00FF00", -- Green
 	identifier = "#50FA7B", -- White
 	cursorline = "#000050", -- Dark stuff
-	floatmenu = "#0b595a",
+	floatmenu = "#008b8d",
 	black = "#000000",
 	white = "#FFFFFF",
 	special = "#00FFFF",
@@ -103,4 +103,3 @@ M.loadcolors = function(opts)
 end
 
 return M
-
